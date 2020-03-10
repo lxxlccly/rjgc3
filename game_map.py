@@ -1,3 +1,4 @@
+'''生命游戏计算函数'''
 # -*- coding: utf-8 -*-
 #
 # @author Epsirom
@@ -109,12 +110,14 @@ class GameMap(object):
         return count
 
     def get_neighbor_count_map(self):
+        '''获得周围格子中值为1的数量'''
         return [
             [self.get_neighbor_count(row, col) for col in range(self.cols)]
             for row in range(self.rows)
             ]
 
     def set_map(self, new_map):
+        '''设置格子的值'''
         if not isinstance(new_map, list):
             raise TypeError("new_map should be list")
         assert len(new_map) == self.rows
@@ -129,6 +132,7 @@ class GameMap(object):
         self.cells = new_map
 
     def print_map(self, cell_maps=None, sep=' '):
+        '''打印格子的值'''
         if not cell_maps:
             cell_maps = ['0', '1']
         if not isinstance(cell_maps, list) and not isinstance(cell_maps, dict):

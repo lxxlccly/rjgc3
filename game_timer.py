@@ -1,3 +1,4 @@
+'''计时器'''
 # -*- coding: utf-8 -*-
 #
 # @author Epsirom
@@ -7,6 +8,7 @@ import time
 
 
 class GameTimer(object):
+    '''计时器'''
 
     def __init__(self, trigger, interval=1.0):
         """Initializes GameTimer with trigger function and interval seconds."""
@@ -20,6 +22,7 @@ class GameTimer(object):
         self.is_running = False
 
     def start(self):
+        '''开始运行'''
         self.is_running = True
         while self.is_running:
             time.sleep(math.ceil(time.time() / self.interval) * self.interval - time.time())
@@ -27,4 +30,5 @@ class GameTimer(object):
                 self.trigger()
 
     def stop(self):
+        '''停止运行'''
         self.is_running = False

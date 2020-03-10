@@ -1,3 +1,4 @@
+'''生命游戏主程序'''
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 #
@@ -11,6 +12,7 @@ from life_game import LifeGame
 
 
 def print_usage():
+    '''打印用户信息'''
     print("Usage:", sys.argv[0], '<map_rows=10>', '<map_cols=10>', '<life_init_possibility=0.5>',
           '<time_interval=1.0>')
 
